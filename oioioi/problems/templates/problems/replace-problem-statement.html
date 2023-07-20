@@ -27,7 +27,7 @@
 
     <div class="form-group {% if form.file_name.errors %}has-error{% endif %}">
         {% if display_labels != False %}
-            <label for="{{ form.file_name.auto_id }}" class="control-label">
+            <label for="{{ form.file_name.auto_id }}" class="form-label">
                 {{ form.file_name.label }}
             </label>
         {% endif %}
@@ -42,7 +42,7 @@
 
     <div class="form-group {% if form.file_replacement.errors %}has-error{% endif %}">
         {% if display_labels != False %}
-            <label for="{{ form.file_replacement.auto_id }}" class="control-label">
+            <label for="{{ form.file_replacement.auto_id }}" class="form-label">
                 {{ form.file_replacement.label }}
             </label>
         {% endif %}

@@ -22,7 +22,7 @@
         </div>
         <div class="second-column">
             <label for="translation-select">{% trans "Translation language" %}:</label>
-            <select id="translation-select" class="form-control">
+            <select id="translation-select" class="form-control form-select">
                 <option value="">------</option>
                 {% for lang_short, lang_name in LANGUAGES %}
                     {% if lang_short != LANGUAGE_CODE %}

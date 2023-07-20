@@ -6,8 +6,8 @@
     {% if side_menus|length > 1 %}
         {% for registry in side_menus %}
             {% generate_menu registry %}
-            <div class="card">
-                <div class="card-header" role="tab" id="menu-heading-{{ forloop.counter }}">
+            <div class="card mb-2">
+                <div class="card-header border-0" role="tab" id="menu-heading-{{ forloop.counter }}">
                     <h5 class="card-title mb-0">
                         <a class="text-dark text-decoration-none collapsed" role="button" data-toggle="collapse"
                             href="#menu-{{ forloop.counter }}" aria-controls="menu-{{ forloop.counter }}"

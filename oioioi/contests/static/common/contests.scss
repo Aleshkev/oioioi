@@ -24,7 +24,7 @@ $list-subheader-bgcolor: #eee !default;
   }
 
   .collapsing, .in {
-    padding: $table-cell-padding-sm;
+    padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
   }
 }
 
@@ -34,7 +34,7 @@ $list-subheader-bgcolor: #eee !default;
   }
 }
 
-table.table-striped > tbody > tr.problemlist-subheader {
+table.table-hover > tbody > tr.problemlist-subheader {
     background-color: $list-subheader-bgcolor;
 }
 

@@ -56,7 +56,7 @@
                             {% endif %}/ {{ test.test_time_limit|runtimeformat }}
                         </td>
                         {% if show_scores and forloop.first %}
-                            <td class="group-score text-right" rowspan="{{ group.tests|length }}">
+                            <td class="group-score text-end" rowspan="{{ group.tests|length }}">
                                 {% if group.report.score %}
                                     {{ group.report.score }} / {{ group.report.max_score }}
                                 {% endif %}

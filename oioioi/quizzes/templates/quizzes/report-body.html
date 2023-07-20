@@ -22,7 +22,7 @@
                 <td class="submission--{{ question_report.status }}">
                     {{ question_report.get_status_display }}
                 </td>
-                <td class="group-score text-right">
+                <td class="group-score text-end">
                     {% if question_report.score %}
                         {{ question_report.score }} / {{ question_report.question_max_score }}
                     {% endif %}

@@ -6,7 +6,7 @@
 {% endif %}
 {% if results %}
 <div class="results table-responsive">
-<table class="table table-striped" id="result_list">
+<table class="table table-hover table-lightly-bordered" id="result_list">
 <thead>
 <tr>
 {% for header in result_headers %}
@@ -20,7 +20,7 @@
        </div>
      {% endif %}
    {% endif %}
-   {% if header.sortable %}<a class="text-dark" href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span class="text-dark">{{ header.text|capfirst }}</span>{% endif %}
+   {% if header.sortable %}<a class="link-dark" href="{{ header.url_primary }}">{{ header.text|capfirst }}</a>{% else %}<span class="link-dark">{{ header.text|capfirst }}</span>{% endif %}
 </th>{% endfor %}
 </tr>
 </thead>

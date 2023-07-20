@@ -60,7 +60,7 @@
 {% if form %}
 <div class="oioioi-message--reply">
     <p class="oioioi-message__info oioioi-message__info--new">
-        <span class="oioioi-message__badge badge badge-secondary">{% trans "New reply" %}</span>
+        <span class="oioioi-message__badge badge bg-secondary">{% trans "New reply" %}</span>
     </p>
     <form enctype="multipart/form-data" id="reply_form" method="post">
         {% csrf_token %}
@@ -92,7 +92,7 @@
             <input type="submit" id="submitter" class="btn btn-primary" value="{% trans "Submit" %}">
             <div class="float-right checkbox">
                 <label for="id_fake_save_template">
-                    <input id="id_fake_save_template" name="fake_save_template" type="checkbox">
+                    <input id="id_fake_save_template" name="fake_save_template" type="checkbox" class="form-check-input">
                     {% trans "Save as template" %}
                 </label>
                 <script>

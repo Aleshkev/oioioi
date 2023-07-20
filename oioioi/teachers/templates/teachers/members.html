@@ -62,7 +62,7 @@
                 <div class="add-group-top">
                     <form action="{% url 'usergroup_attach_to_contest' %}" method="POST">
                         {% csrf_token %}
-                        <select class="form-control" name="usergroup_id">
+                        <select class="form-control form-select" name="usergroup_id">
                             {% for usergroup in usergroups_dropdown %}
                                 <option value="{{ usergroup.id }}">{{ usergroup.name }}</option>
                             {% endfor %}
@@ -115,7 +115,7 @@
                         <div class="add-group-bottom">
                             <form action="{% url 'usergroup_attach_to_contest' %}" method="POST">
                                 {% csrf_token %}
-                                <select class="form-control" name="usergroup_id">
+                                <select class="form-control form-select" name="usergroup_id">
                                     {% for usergroup in usergroups_dropdown %}
                                         <option value="{{ usergroup.id }}">{{ usergroup.name }}</option>
                                     {% endfor %}
@@ -198,7 +198,7 @@
                             <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="member" value="{{ member.id }}" {% if member_type == 'teacher' and member == user %}disabled{% endif %}>
+                                        <input type="checkbox" class="form-check-input" name="member" value="{{ member.id }}" {% if member_type == 'teacher' and member == user %}disabled{% endif %}>
                                         {{ member.get_full_name }}
                                     </label>
                                 </div>

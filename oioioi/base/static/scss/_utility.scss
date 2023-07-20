@@ -3,3 +3,50 @@
 @import "bootstrap/stylesheets/functions";
 @import "bootstrap/stylesheets/variables";
 @import "bootstrap/stylesheets/mixins";
+
+
+.d-print-none {
+  // TODO
+}
+
+// We don't support RTL languages.
+// TODO: just replace these in our code
+.float-left {
+  @extend .float-start !optional;
+}
+.float-right {
+  @extend .float-end !optional;
+}
+
+// Horizontal direction specific variables, utilities, and mixins have all been renamed to use logical properties like those found in flexbox layouts—e.g., start and end in lieu of left and right.
+// TODO: are there more of these that we use?
+
+// TODO: Remove these
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.form-row > .col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+

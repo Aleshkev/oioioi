@@ -1,6 +1,31 @@
+
+$white: #ffffff;
+
+// These are some nostalgic colors from Bootstrap 3.
+$primary: #337ab7;
+$success: #5cb85c;
+$danger: #d9534f;
+$warning: #f0ad4e;
+$info: #5bc0de;
+
+// Reducing Bootstrap's default outline goes a long way in making the site look
+// less cheap.
+$input-btn-focus-width: 1px;
+$input-btn-focus-color-opacity: 1;
+$input-focus-border-color: $primary;
+
+// This style is inspired by the Primer design system.
+$table-th-font-weight: 600;
+$table-hover-bg: rgba(234, 238, 242, 0.5);
+$table-border-color: #d0d7de;
+$table-group-separator-color: $table-border-color;
+
+// TODO: There is a major problem with these imports: styles in Django apps 
+// import these styles again. The resulting CSS output duplicates the same
+// styles about 5 times.
+
 @import "utility";
 
-// Import Bootstrap
 @import "../bootstrap/stylesheets/bootstrap";
 
 @import "scss/admin";
@@ -19,6 +44,14 @@ body {
 
 form:not(.form-wide) {
   max-width: $oioioi-form-max-width;
+}
+
+// This is to replicate Bootstrap 4's behavior (which we actually like).
+a {
+  text-decoration: none;
+  &:hover, &:active {
+    text-decoration: underline;
+  }
 }
 
 textarea.non-resizable {
@@ -40,4 +73,66 @@ img {
 
 .tag-label {
   line-height: 2.5em;
+}
+
+// We style all form controls by default -- because it's too hard to hunt in the
+// code for all usages, and some are created implicitly by Django itself.
+//
+// This may be a bad idea, but I looked around and there seem to be no inputs
+// in the whole codebase that should not be styled.
+
+input[type=date], input[type=email], input[type=number],
+input[type=password], input[type=tel], input[type=text], input[type=time],
+input[type=url], input[type=week], textarea {
+  @extend .form-control;
+}
+input[type=file] {
+  @extend .form-control[type=file]; // Note: don't merge with above rule.
+}
+
+input[type=range] {
+  @extend .form-range;
+}
+select {
+  @extend .form-select;
+}
+// We could do that, but the default look of checkboxes is fine.
+// input[type=checkbox], input[type=radio] {
+//   @extend .form-check-input;
+// }
+
+
+// TODO: Django wraps <select> (for example on the Submit page) in a <div>, and then
+// some templates add .form-control to all fields. So the div will have an extra
+// .form-control class which adds extraneous padding.
+//
+// Ideally, the templates should be modified not to wrap <select> in divs.
+div.form-control {
+  border: none;
+  padding: 0;
+}
+
+
+// We restyle the components to look less like out-of-the-box Bootstrap.
+// THESE STYLES SHOULD BE A DROP-IN REPLACEMENT. They should not change layout,
+// nor any functionality.
+
+.table-lightly-bordered {    
+  > thead > tr, > tbody > tr {
+    border: $table-border-width $table-border-color solid;
+  }
+  > thead {
+    background-color: $card-cap-bg;
+  }
+}
+
+.table {
+  @extend .table-hover;
+  @extend .table-lightly-bordered;
+}
+
+// TODO: This is from Bootstrap 4. Remove usages.
+.btn-block {
+  display: block;
+  width: 100%;
 }

@@ -23,11 +23,11 @@
 
                                 {% if not field.is_readonly %}
                                     {% for error in field.field.errors %}
-                                        <small class="{% if not inline %}form-text{% endif %} text-danger">{{ error }}</small>
+                                        <small class="{% if not inline %}d-block{% endif %} form-text  text-danger">{{ error }}</small>
                                     {% endfor %}
                                 {% endif %}
                                 {% if field.field.help_text %}
-                                    <small class="help text-muted form-text">{{ field.field.help_text|safe }}</small>
+                                    <small class="help text-muted d-block form-text">{{ field.field.help_text|safe }}</small>
                                 {% endif %}
                             {% else %}
                                 <div class="row">
@@ -44,11 +44,11 @@
                                         {% endif %}
                                         {% if not field.is_readonly %}
                                             {% for error in field.field.errors %}
-                                                <small class="{% if not inline %}form-text{% endif %} text-danger">{{ error }}</small>
+                                                <small class="{% if not inline %}d-block{% endif %} form-text  text-danger">{{ error }}</small>
                                             {% endfor %}
                                         {% endif %}
                                         {% if field.field.help_text %}
-                                            <small class="help text-muted form-text">{{ field.field.help_text|safe }}</small>
+                                            <small class="help text-muted d-block form-text">{{ field.field.help_text|safe }}</small>
                                         {% endif %}
                                     </div>
                                 </div>

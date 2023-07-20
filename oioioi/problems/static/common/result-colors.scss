@@ -17,7 +17,7 @@ $result-margin-min-width: 20px !default;
   }
 
   &.result__status {
-    background: lighten($color, 5%);
+    background: tint-color($color, 5%);
   }
 }
 

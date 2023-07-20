@@ -22,7 +22,7 @@ class AddContestMessageForm(forms.ModelForm):
 
     def __init__(self, request, *args, **kwargs):
         super(AddContestMessageForm, self).__init__(*args, **kwargs)
-        self.fields['content'].widget.attrs['class'] = 'monospace'
+        self.fields['content'].widget.attrs['class'] = 'font-monospace'
 
         if not is_contest_basicadmin(request):
             del self.fields['pub_date']

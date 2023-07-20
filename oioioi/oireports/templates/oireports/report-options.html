@@ -9,7 +9,7 @@
     {% csrf_token %}
     {% for field in form.control_fields %}
         <div class="form-group">
-            <label for="{{ field.auto_id }}" class="control-label">
+            <label for="{{ field.auto_id }}" class="form-label">
                 {{ field.label }}
             </label>
             {{ field | add_class:"form-control" }}
@@ -35,7 +35,7 @@
                 <div class="well well-sm round_{{ field.field.round }}">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" class="control_checkbox" data-selector="{{ field.html_name }}"/>
+                            <input type="checkbox" class="control_checkbox form-check-input" data-selector="{{ field.html_name }}"/>
                             {{ field.label }}
                         </label>
                     </div>

@@ -630,12 +630,12 @@ class ProgrammingProblemController(ProblemController):
                 initial=True if default_state else False,
             )
             code_widget = AceEditorWidget(
-                attrs={'rows': 10, 'class': 'monospace'},
+                attrs={'rows': 10, 'class': 'font-monospace'},
                 default_state=default_state,
             )
         else:
             code_widget = forms.widgets.Textarea(
-                attrs={'rows': 10, 'class': 'monospace'}
+                attrs={'rows': 10, 'class': 'font-monospace'}
             )
 
         form.fields['code'] = forms.CharField(

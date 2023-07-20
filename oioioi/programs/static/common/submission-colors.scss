@@ -31,7 +31,7 @@ $submission-margin-min-width: 20px !default;
   }
 
   &.submission__status {
-    background: lighten($color, 5%);
+    background: tint-color($color, 5%);
   }
 }
 

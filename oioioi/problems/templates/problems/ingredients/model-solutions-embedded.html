@@ -28,7 +28,7 @@
                 {% endfor %}
             </tr>
             <tr>
-                <th class="force-text-right">{% trans "Total" %}</th>
+                <th class="force-text-end">{% trans "Total" %}</th>
                 <th>{{ model_solutions.total_row.test|runtimeformat }}</th>
                 {% for result in model_solutions.total_row.results %}
                     <th>{{ result|runtimeformat }}</th>
@@ -39,7 +39,7 @@
             {% spaceless %}
                 {% for row in model_solutions.rows %}
                     <tr>
-                        <th class="force-text-right">{{ row.test.name }}</th>
+                        <th class="force-text-end">{{ row.test.name }}</th>
                         <td>{{ row.test.time_limit|runtimeformat }}</td>
                         {% for cell in row.results %}
                             <td class="submission submission--

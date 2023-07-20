@@ -1,7 +1,7 @@
 {% load i18n %}
 {% for suffix, opts, selected in options %}
 <p>
-<select name="{{ attr.name }}{{ suffix }}" id="{{ attr.id }}{{ suffix }}">
+<select name="{{ attr.name }}{{ suffix }}" id="{{ attr.id }}{{ suffix }}" class="form-select">
     {% for value, option in opts %}
         <option value="{{ value }}" {% if value == selected %}selected{% endif %}>
             {{ option }}

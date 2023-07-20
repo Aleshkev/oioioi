@@ -45,7 +45,7 @@
                     {% endfor %}
                 </tr>
                 <tr>
-                    <th class="force-text-right">{% trans "Total" %}</th>
+                    <th class="force-text-end">{% trans "Total" %}</th>
                     <th>{{ total_row.test|runtimeformat }}</th>
                     {% for result in total_row.results %}
                         <th>{{ result|runtimeformat }}</th>
@@ -56,7 +56,7 @@
                 {% spaceless %}
                     {% for row in rows %}
                         <tr>
-                            <th class="force-text-right">{{ row.test.name }}</th>
+                            <th class="force-text-end">{{ row.test.name }}</th>
                             <td>{{ row.test.time_limit|runtimeformat }}</td>
                             {% for cell in row.results %}
                                 <td class="submission submission--{{ cell.test_report.status }}{% if cell.test_report.status == 'OK'%}{{ cell.percentage_status }}{% endif %}">
