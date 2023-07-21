@@ -7,6 +7,8 @@ $(function() {
             '</td>' +
             '<td class="button-cell"></td>' +
         '</tr>';
+    // TODO: DO these data-loading-text do anything? Nothing seems to
+    // use them since Bootstrap 3.
     var deliveredButtonTemplate =
         '<button class="btn btn-primary btn-sm" ' +
             'data-loading-text="' + gettext("Delivering...") + '">' +
